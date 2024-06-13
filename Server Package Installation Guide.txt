@@ -1,0 +1,8 @@
+# First find all available conda envs
+conda env list
+
+# Activate any one of them (preferably a package with TF and PT)
+conda activate <env_name>
+
+# Install packages
+pip install transformers datasets sentence-transformers cohere pinecone pinecone-client faiss-gpu
