@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{float}
 
 % Geometry settings
 \geometry{
@@ -26,7 +27,7 @@
 
 % Title Page
 \title{Homework 1: Vector Search}
-\author{Naomi Derel 325324994, Gili Cohen 326280815, Renana Shachak}
+\author{Naomi Derel 325324994, Gili Cohen 326280815, Renana Shachak 213920010}
 \date{02.07.2024}
 \maketitle
 
@@ -39,19 +40,39 @@
 
 \subsection{Running Times}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/1_1_1.png}
+    \includegraphics[width=0.8\textwidth]{images/1_1_1.png}
     \caption{Running times by Number of Index Vectors}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/1_1_2.png}
+    \includegraphics[width=0.8\textwidth]{images/1_1_2.png}
     \caption{Running times by Dimentionality}
 \end{figure}
 
 \subsection{Faiss LSH}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/1_2_1.png}
+    \caption{Running times by Number of Index Vectors}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/1_2_2.png}
+    \caption{Running times by Number of Bits}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/1_2_3.png}
+    \caption{$Recall@10$ by Number of Bits}
+\end{figure}
+
+\newpage
 
 \section{Implementing an Index}
 
