@@ -197,8 +197,6 @@ The standard QA model from cohere may fall short in answering factual questions 
     \item \textbf{Chunking documents for embedding generation:} As described in "dataset selection", the contexts for the questions are passages from Wikipedia articles, and so they are relatively short (we could think about this as if the passages are already pre-chuncked documents).
     Due to this, we believe further chunking might cause more loss of information than gain in noise reduction.
     
-    Additionally, we checked that the largest documents and query in the dataset are within the limits of the model, so we will not encounter any issues with the model's input size.
-
     \item \textbf{Embedding generation and insertion into Pinecone VectorDB:} We created a Pinecone VectorDB index using the API Key, and upserted the embeddings of the pure text of the documents into the index. 
     In our dataset, we chose not to include additional metadata, as it was not informative further than the text itself.
     
@@ -220,14 +218,20 @@ Query: {query}
 \subsection{Insights}
 
 
-The examples shown present multiple potential cause for error: blatantly incorrect information, hallucinated information or lacking information.
+The examples shown present multiple potential types of error: blatantly incorrect information (ex. 1), hallucinated information (ex. 2) or lacking information (ex. 3).
 The common theme among these examples are domain specific, factual questions - which is what we aimed to solve with RAG.
 
-We also conducted a small-scale evaluation of the RAG pipeline on a few examples, and found that the RAG model, including the retrieval step, was faster than the standard QA model. 
+We also conducted a small-scale evaluation of the RAG pipeline on a few (50) examples, and found that the RAG model, including the retrieval step, was faster than the standard QA model. 
 We explain this by suggesting that the regular model without context might take longer to generate an answer it doesn't necessarily know, while the RAG model can answer very quickly once the context is provided.
 
+Additionally, as supported by the examples we managed to fix, the average cosine similarity between the generated response and the answer was higher using RAG than the QA model.
 
-
+% insert image:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/3_1.png}
+    \caption{Comparison of RAG and QA model on 50 examples}
+\end{figure}
 
 % % Bibliography
 % \newpage
