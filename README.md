@@ -28,6 +28,4 @@ The RAG pipeline consists of the following steps:
 3. Retrieval of relevant documents for query.
 4. Generating answers to given questions using an augmented prompt with the retrieved documents.
 
-Anecdotal measurements on 50 examples show that the RAG pipeline improves the performance of the LLM model, both in run-time and in estimated correctness:
-
-![RAG pipeline](report/images/3_1.png)
+Anecdotal measurements on 50 examples show that the RAG pipeline improves the performance of the LLM model, both in run-time and in estimated correctness.
